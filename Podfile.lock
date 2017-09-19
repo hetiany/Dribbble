@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.4.0)
+  - Kingfisher (3.6.2)
+  - MJExtension (3.0.13)
+  - ObjectMapper (2.2.6)
+  - PureLayout (3.0.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - Kingfisher (~> 3.0)
+  - MJExtension
+  - ObjectMapper (~> 2.2)
+  - PureLayout
+  - SDWebImage (~> 4.0)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: e662de2ab668980f4d0470d6c29016de73846d29
+
+COCOAPODS: 1.2.1
