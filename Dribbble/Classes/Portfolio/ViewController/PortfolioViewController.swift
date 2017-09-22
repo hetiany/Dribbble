@@ -11,7 +11,7 @@ import WebKit
 
 class PortfolioViewController: SUIViewController {
 
-    fileprivate let accountManager = AccountManager()
+    fileprivate let accountManager = AccountManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,13 @@ class PortfolioViewController: SUIViewController {
                          WKWebsiteDataTypeIndexedDBDatabases]
         let dataTypeSet = Set(dataTypes)
         WKWebsiteDataStore.default().removeData(ofTypes: dataTypeSet, modifiedSince: Date.distantPast, completionHandler: {
-            print("clear ok")
-            let vc = LoginViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            self.present(nav, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                print("clear ok")
+                let vc = LoginViewController()
+                let nav = UINavigationController(rootViewController: vc)
+                //self.present(nav, animated: true, completion: nil)
+                UIApplication.shared.keyWindow?.rootViewController = nav
+            }
         })
     }
 }

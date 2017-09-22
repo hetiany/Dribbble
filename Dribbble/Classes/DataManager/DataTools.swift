@@ -9,11 +9,11 @@
 import Foundation
 
 class DataTools {
-    
+    static let accoutManager = AccountManager.shared
     static func fetchShots(
         success: @escaping ([Shot]?) -> (),
         failure: @escaping (Error?) -> ()) {
-        let urlStr = shotsEndPoint.appending(accessParameter + accessToken)
+        let urlStr = shotsEndPoint.appending(accessParameter + accoutManager.accessToken!)
         HTTPTools.get(urlStr: urlStr, success: { (any) in
 //            guard let data = data else {
 //                return

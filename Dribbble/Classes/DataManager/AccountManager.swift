@@ -15,7 +15,10 @@ protocol AccountManagerDelegate: class {
 
 
 class AccountManager {
-    
+    static let shared = AccountManager()
+    private init() {
+        
+    }
     struct Keys {
         static let requestTokenURL = "https://dribbble.com/oauth/token"
         static let oauthLoginURL = "https://dribbble.com/oauth/authorize"
@@ -23,17 +26,17 @@ class AccountManager {
         static let scopePermission = "public write"
         static let bearer = "bearer"
         static let callBackUrl = "driapicallback"
-        //static let accessToken = "dribbble_oauth2"
+        
         static let clientId = "c5f84baa3d4096f07768beb612f28203962046bf12671823c2b3da8c6cfbed8a"
         static let clientSecret = "304dd3befbaa17e3e374d1ea01213c95491fdc91b4389a17ddd801c4a417ef08"
-        static let publicToken = "a156d6134f4a70f744b0215d74890e0f38e9c60f1d08a80e5c69c900a8aa006f"
+        //static let publicToken = "a156d6134f4a70f744b0215d74890e0f38e9c60f1d08a80e5c69c900a8aa006f"
         
         static let kUserDefaultAccessToken = "kUserDefaultAccessToken"
     }
+    
     fileprivate let userDefault = UserDefaults.standard
 
-
-    fileprivate var accessToken: String? {
+    private(set) var accessToken: String? {
         get {
             return userDefault.object(forKey: Keys.kUserDefaultAccessToken) as? String
         }
@@ -65,11 +68,6 @@ class AccountManager {
         self.accessToken = str
     }
     
-    
-    init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleOAuthCallBack(_:)), name: ReceivedURLCallBackNotification, object: nil)
-    }
-    
     // sept1: create url for OAUth2
     var oauth2LoginUrl: URL? {
         
@@ -86,24 +84,17 @@ class AccountManager {
     }
     
     // sept2: login with login url
-    func performLogin() {
+    func handleCallBack(url: URL) {
         if isRequesting {
             return
         }
         isRequesting = true
-    }
-    
-    
-    // sept3: process call back url and request token
-    @objc func handleOAuthCallBack(_ notification: NSNotification) {
         
-        guard let url = notification.object as? URL else {
-            return
-        }
         processOAuthCallBack(url: url) { [weak self] (success, error) in
             self?.delegate?.didFinishOAuthFlow(success: success, error: error)
         }
     }
+    
     
     private func processOAuthCallBack(url: URL, completion: @escaping (Bool, Error?) -> ()) {
         
@@ -145,6 +136,7 @@ class AccountManager {
         HTTPTools.post(urlStr: Keys.requestTokenURL, parameters: params, header: header) { [weak self] (result, error) in
             if let error = error {
                 completion(false, error)
+                return
             }
             self?.parseAccessToken(object: result, completion: completion)
             
@@ -212,7 +204,7 @@ class AccountManager {
         self.accessToken = validAccessToken
         self.createdAt = validCreatedAt
         print("Confirmed access token")
-        print(object ?? "")
+        //print(object ?? "")
         completion(true, nil)
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let account = AccountManager()
+        let account = AccountManager.shared
         if account.hasAccessToken {
             window?.rootViewController = MainTabBarController()
         }
@@ -58,11 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-
-        NotificationCenter.default.post(name: ReceivedURLCallBackNotification, object: url)
-        return true
-    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//
+//        NotificationCenter.default.post(name: ReceivedURLCallBackNotification, object: url)
+//        return true
+//    }
 
 }
 

@@ -13,14 +13,15 @@ import WebKit
 
 class LoginViewController: UIViewController {
 
-    fileprivate let accountManager = AccountManager()
+    fileprivate let accountManager = AccountManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.view.backgroundColor = .white
         accountManager.delegate = self
         
         let loginButton = UIButton()
+        //loginButton.setTitleColor(UIColor.darkGray, for: .normal)
         loginButton.setTitle("Login with Dribbble", for: .normal)
         loginButton.addTarget(self, action: #selector(self.didTapLoginButton), for: .touchUpInside)
         view.addSubview(loginButton)
@@ -39,10 +40,11 @@ class LoginViewController: UIViewController {
  
     @objc func didTapLoginButton() {
         if accountManager.hasAccessToken == false {
+            
             let authUrl = accountManager.oauth2LoginUrl
-            let title = "Login to Dribbble"
-            let wkVC = WKViewController(url: authUrl, textTitle: title)
+            let wkVC = WKViewController(url: authUrl)
             wkVC.webViewDelegate = self
+            
             self.navigationController?.pushViewController(wkVC, animated: true)
         }
         else {
@@ -61,7 +63,6 @@ extension LoginViewController: AccountManagerDelegate {
         else if success {
             let tabBarVC = MainTabBarController()
             UIApplication.shared.keyWindow?.rootViewController = tabBarVC
-            self.dismiss(animated: true, completion: nil)
         }
         else {
             print("Fail to login")
@@ -82,8 +83,8 @@ extension LoginViewController: WKViewControllerDelegate {
         accountManager.clearRequestingOAuth()
     }
     
-    func WKViewWillBeginRequestingToken() {
-        accountManager.performLogin()
+    func WKViewDidReceivedCallback(url: URL) {
+        accountManager.handleCallBack(url: url)
     }
 }
 

@@ -20,4 +20,15 @@ extension UIView {
             self.frame = frame
         }
     }
+    
+//    func getFrameX() -> CGFloat {
+//        return self.frame.origin.x
+//    }
+//    
+//    func setFrameX(_ newValue: CGFloat) {
+//        var frame = self.frame
+//        frame.origin.x = newValue
+//        self.frame = frame
+//    }
+    
 }
