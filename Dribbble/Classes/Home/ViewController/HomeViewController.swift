@@ -10,50 +10,20 @@ import UIKit
 import PureLayout
 
 
-//    static func fetchShots(contentType: HomeViewController.ContentType,
-//                           success: @escaping ([Shot]?) -> (),
-//                           failure: @escaping (Error?) -> ()) {
-//
-//        let successBlock: ([Shot]?) -> () = {
-//            shots in
-//
-//        }
-//
-//
-//        switch contentType {
-//        case .popular:
-//            DataTools.fetchShots(success: success, failure: failure)
-//        case .recent:
-//
-//
-//
-//        }
-//    }
-
-
 class HomeViewController: SUIViewController {
     
     fileprivate weak var collectionView: UICollectionView?
     fileprivate let homeCellId = "HomeCollectionViewCell"
     
     var shots: [HomeCellViewModel] = []
-    
-    var contentType: ContentType = .recent
-    enum ContentType: String {
-        case recent
-        case popular
         
-        var title: String {
-            return self.rawValue
-        }
-    }
-    
-    
+    var contentType: ContentType = .recent
+
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCollectionView()
         
-        DataTools.fetchShots(success: { (results) in
+        DataTools.fetchShots(contentTpye: contentType, success: { (results) in
             if let results = results {
                 //print(results[0].user?.avatar_url ?? "nil")
                 for i in 0..<results.count {

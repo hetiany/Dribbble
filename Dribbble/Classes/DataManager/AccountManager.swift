@@ -44,6 +44,8 @@ class AccountManager {
             userDefault.set(newValue, forKey: Keys.kUserDefaultAccessToken)
         }
     }
+    
+    
     fileprivate var createdAt: Int?
     fileprivate var isRequesting = false
     

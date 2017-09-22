@@ -11,44 +11,40 @@ import Foundation
 class DataTools {
     static let accoutManager = AccountManager.shared
     static func fetchShots(
+        contentTpye: ContentType,
         success: @escaping ([Shot]?) -> (),
         failure: @escaping (Error?) -> ()) {
-        let urlStr = shotsEndPoint.appending(accessParameter + accoutManager.accessToken!)
+        
+        var urlStr: String = ""
+        switch contentTpye {
+        case .popular:
+            print("popular")
+            urlStr = shotsPopularEndPoint.appending(accessParameter + accoutManager.accessToken!)
+            break
+            
+        case .recent:
+            print("recent")
+            urlStr = shotsRecentEndPoint.appending(accessParameter + accoutManager.accessToken!)
+            break
+            
+//        case .following:
+//            
+//        case .debuts:
+//            
+//        case .teams:
+//            
+//        case .playoffs:
+        default:
+            print("OK")
+        }
+        
+        //let urlStr = shotsPopularEndPoint.appending(accessParameter + accoutManager.accessToken!)
         HTTPTools.get(urlStr: urlStr, success: { (any) in
-//            guard let data = data else {
-//                return
-//            }
-//
-//            guard let objs = try? JSONSerialization.jsonObject(with: data, options: []) else {
-//                assertionFailure("[Shot] : cannot serialize")
-//                return
-//            }
-//
-//            guard let validObjs = objs as? [Any] else {
-//                assertionFailure("[Shot] : is not [Any]")
-//                return
-//            }
-//            var res: [Shot] = []
-//            for obj in validObjs {
-//                if let shot = Shot(input: obj) {
-//                    res.append(shot)
-//                }
-//            }
             
             if let any = any {
                 //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let object = any as? [Any] {
                     var res: [Shot] = []
-                    
-//                    object.forEach({ (element) in
-//                        guard let dict = element as? [String: Any] else {
-//                            return
-//                        }
-//                        guard let model = Shot(JSON: dict, context: nil) else {
-//                            return
-//                        }
-//                        res.append(model)
-//                    })
                     
                     for i in 0..<object.count {
                         guard let dict = object[i] as? [String: Any] else {
@@ -59,16 +55,11 @@ class DataTools {
                         }
                         res.append(model)
                     }
-//                    print(res.count)
                     success(res)
                 } else {
                     print("JSON is invalid")
                 }
             }
-            
-//            print(validObjs)
-//            print(validObjs.count)
-//            success(nil)
         }, failure: {
             (error) in
             failure(error)

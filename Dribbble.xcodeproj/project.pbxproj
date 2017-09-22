@@ -21,7 +21,7 @@
 		D516DC391F60B9BD0038A926 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC371F60B9BD0038A926 /* User.swift */; };
 		D516DC3F1F60C4500038A926 /* HTTPTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC3E1F60C4500038A926 /* HTTPTools.swift */; };
 		D516DC411F60C90E0038A926 /* DataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC401F60C90E0038A926 /* DataTools.swift */; };
-		D516DC431F60D9B60038A926 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC421F60D9B60038A926 /* Constants.swift */; };
+		D516DC431F60D9B60038A926 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC421F60D9B60038A926 /* Global.swift */; };
 		D516DC901F6B44C60038A926 /* SUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC8F1F6B44C60038A926 /* SUIViewController.swift */; };
 		D516DC921F6B45790038A926 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC911F6B45790038A926 /* NavigationController.swift */; };
 		D516DC941F6B65300038A926 /* TitleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC931F6B65300038A926 /* TitleMenuViewController.swift */; };
@@ -56,7 +56,7 @@
 		D516DC371F60B9BD0038A926 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D516DC3E1F60C4500038A926 /* HTTPTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTools.swift; sourceTree = "<group>"; };
 		D516DC401F60C90E0038A926 /* DataTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTools.swift; sourceTree = "<group>"; };
-		D516DC421F60D9B60038A926 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D516DC421F60D9B60038A926 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		D516DC8F1F6B44C60038A926 /* SUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIViewController.swift; sourceTree = "<group>"; };
 		D516DC911F6B45790038A926 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D516DC931F6B65300038A926 /* TitleMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleMenuViewController.swift; path = Dribbble/Classes/UIComponent/Controller/TitleMenuViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -159,7 +159,7 @@
 				D516DC101F5F9EF10038A926 /* Main.storyboard */,
 				D516DC2C1F5FA9B10038A926 /* MainTabBarController.swift */,
 				D516DC8F1F6B44C60038A926 /* SUIViewController.swift */,
-				D516DC421F60D9B60038A926 /* Constants.swift */,
+				D516DC421F60D9B60038A926 /* Global.swift */,
 				D516DC911F6B45790038A926 /* NavigationController.swift */,
 			);
 			path = Basic;
@@ -465,7 +465,7 @@
 			files = (
 				D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */,
 				D516DC0D1F5F9EF10038A926 /* AppDelegate.swift in Sources */,
-				D516DC431F60D9B60038A926 /* Constants.swift in Sources */,
+				D516DC431F60D9B60038A926 /* Global.swift in Sources */,
 				D516DC901F6B44C60038A926 /* SUIViewController.swift in Sources */,
 				D516DC2B1F5FA02C0038A926 /* HomeViewController.swift in Sources */,
 				D516DC3F1F60C4500038A926 /* HTTPTools.swift in Sources */,
