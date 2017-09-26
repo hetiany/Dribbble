@@ -33,6 +33,9 @@
 		D5EFCFFC1F706C8B008EA87A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */; };
 		D5EFCFFF1F706DE3008EA87A /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */; };
 		D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFD0001F70849C008EA87A /* WKViewController.swift */; };
+		D5EFD0031F75C70F008EA87A /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFD0021F75C70F008EA87A /* ExploreCollectionViewCell.swift */; };
+		D5EFD0051F75C746008EA87A /* ExploreCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFD0041F75C746008EA87A /* ExploreCellVIewModel.swift */; };
+		D5EFD0071F75C753008EA87A /* ExploreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5EFD0061F75C753008EA87A /* ExploreCollectionViewCell.xib */; };
 		F4ED0D16F9B7C5FD74291D3D /* Pods_Dribbble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7D9EB8EAEDAFEE763B11CB /* Pods_Dribbble.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D5EFD0001F70849C008EA87A /* WKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
+		D5EFD0021F75C70F008EA87A /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5EFD0041F75C746008EA87A /* ExploreCellVIewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreCellVIewModel.swift; sourceTree = "<group>"; };
+		D5EFD0061F75C753008EA87A /* ExploreCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExploreCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +293,8 @@
 		D516DC9B1F6B6AEA0038A926 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5EFD0021F75C70F008EA87A /* ExploreCollectionViewCell.swift */,
+				D5EFD0061F75C753008EA87A /* ExploreCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 		D516DC9D1F6B6AEA0038A926 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D5EFD0041F75C746008EA87A /* ExploreCellVIewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EFD0071F75C753008EA87A /* ExploreCollectionViewCell.xib in Resources */,
 				D516DC171F5F9EF10038A926 /* LaunchScreen.storyboard in Resources */,
 				D516DC141F5F9EF10038A926 /* Assets.xcassets in Resources */,
 				D516DC121F5F9EF10038A926 /* Main.storyboard in Resources */,
@@ -465,6 +475,7 @@
 			files = (
 				D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */,
 				D516DC0D1F5F9EF10038A926 /* AppDelegate.swift in Sources */,
+				D5EFD0031F75C70F008EA87A /* ExploreCollectionViewCell.swift in Sources */,
 				D516DC431F60D9B60038A926 /* Global.swift in Sources */,
 				D516DC901F6B44C60038A926 /* SUIViewController.swift in Sources */,
 				D516DC2B1F5FA02C0038A926 /* HomeViewController.swift in Sources */,
@@ -485,6 +496,7 @@
 				D516DC301F5FAA9D0038A926 /* HomeCollectionViewCell.swift in Sources */,
 				D516DC411F60C90E0038A926 /* DataTools.swift in Sources */,
 				D516DC961F6B66420038A926 /* TitleView.swift in Sources */,
+				D5EFD0051F75C746008EA87A /* ExploreCellVIewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

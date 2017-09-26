@@ -9,14 +9,15 @@
 import Foundation
 
 let accessParameter = "access_token="
+let pageParameter = "page="
 
 let base = "https://api.dribbble.com/v1/"
 let authUrl = "https://dribbble.com/oauth/authorize"
 let tokenUrl = "https://dribbble.com/oauth/token"
 
 //Shots End Point
-let shotsPopularEndPoint = "https://api.dribbble.com/v1/shots?"
 let shotsRecentEndPoint = "https://api.dribbble.com/v1/shots?sort=recent&"
+let shotsPopularEndPoint = "https://api.dribbble.com/v1/shots?"
 let shotsFollowingEndPoint = "https://api.dribbble.com/v1/user/following/shots?"
 let shotsDebutsEndPoint = "https://api.dribbble.com/v1/shots?list=debuts&"
 let shotsTeamsEndPoint = "https://api.dribbble.com/v1/shots?list=teams&"
@@ -27,6 +28,21 @@ let shotsPlayoffsEndPoint = "https://api.dribbble.com/v1/shots?list=playoffs&"
 let userEndPoint = "https://api.dribbble.com/v1/user"
 let usersEndPoint = "https://api.dribbble.com/v1/users"
 let followShotEndPoint = "https://api.dribbble.com/v1/user/following/shots"
+
+
+
+
+
+//    func getToken() -> String?{
+//        return userDefault.object(forKey: Keys.kUserDefaultAccessToken) as? String
+//    }
+//
+//    func setToken(_ newValue: String) {
+//        userDefault.set(newValue, forKey: Keys.kUserDefaultAccessToken)
+//    }
+
+
+
 
 
 enum ContentType: String {

@@ -46,6 +46,15 @@ class AccountManager {
     }
     
     
+//    func getToken() -> String?{
+//        return userDefault.object(forKey: Keys.kUserDefaultAccessToken) as? String
+//    }
+//    
+//    func setToken(_ newValue: String) {
+//        userDefault.set(newValue, forKey: Keys.kUserDefaultAccessToken)
+//    }
+    
+    
     fileprivate var createdAt: Int?
     fileprivate var isRequesting = false
     

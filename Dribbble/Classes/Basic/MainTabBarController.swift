@@ -39,22 +39,28 @@ fileprivate extension Utilities {
         //vc2.title = "Popular"
         setupChildVC(TitleMenuViewController(style: .menu, childVC: [vc1, vc2]), "home")
         
-        let vc3 = UIViewController()
-        vc3.view.backgroundColor = UIColor.red
-        vc3.title = "Following"
         
-        let vc4 = UIViewController()
-        vc4.view.backgroundColor = UIColor.blue
-        vc4.title = "Debuts"
         
-        let vc5 = UIViewController()
-        vc5.view.backgroundColor = UIColor.yellow
-        vc5.title = "Teams"
-        
-        let vc6 = UIViewController()
-        vc6.view.backgroundColor = UIColor.red
-        vc6.title = "Playoffs"
-        setupChildVC(ExploreViewController(style: .subMenu, childVC: [vc3, vc4, vc5, vc6]), "explore")
+//        let vc3 = UIViewController()
+//        vc3.view.backgroundColor = UIColor.red
+//        vc3.title = "Following"
+//        
+//        let vc4 = UIViewController()
+//        vc4.view.backgroundColor = UIColor.blue
+//        vc4.title = "Debuts"
+//        
+//        let vc5 = UIViewController()
+//        vc5.view.backgroundColor = UIColor.yellow
+//        vc5.title = "Teams"
+//        
+//        let vc6 = UIViewController()
+//        vc6.view.backgroundColor = UIColor.red
+//        vc6.title = "Playoffs"
+        let vc3 = ExploreViewController(contentType: .following)
+        let vc4 = ExploreViewController(contentType: .debuts)
+        let vc5 = ExploreViewController(contentType: .teams)
+        let vc6 = ExploreViewController(contentType: .playoffs)
+        setupChildVC(TitleMenuViewController(style: .subMenu, childVC: [vc3, vc4, vc5, vc6]), "explore")
         
         setupChildVC(PortfolioViewController(), "user")
     }

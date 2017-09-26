@@ -8,6 +8,7 @@
 
 import UIKit
 import PureLayout
+import MJRefresh
 
 
 class HomeViewController: SUIViewController {
@@ -18,23 +19,13 @@ class HomeViewController: SUIViewController {
     var shots: [HomeCellViewModel] = []
         
     var contentType: ContentType = .recent
+    
+    var page: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareCollectionView()
-        
-        DataTools.fetchShots(contentTpye: contentType, success: { (results) in
-            if let results = results {
-                //print(results[0].user?.avatar_url ?? "nil")
-                for i in 0..<results.count {
-                    self.shots.append(HomeCellViewModel.init(model: results[i]))
-                }
-                //print(self.shots[0].userHeadImageUrl)
-                self.collectionView?.reloadData()
-            }
-        }, failure: { (error) in
-            print(error?.localizedDescription ?? "Unknown Error")
-        })
+        prepareRefresher()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -86,7 +77,7 @@ fileprivate typealias Utilities = HomeViewController
 fileprivate extension Utilities {
     
     func prepareCollectionView() {
-        
+        self.automaticallyAdjustsScrollViewInsets = false
         let layout = UICollectionViewFlowLayout()
         let itemSpacing: CGFloat = 5
         let itemWidth = (ScreenWidth - itemSpacing * 3) / 2
@@ -106,9 +97,72 @@ fileprivate extension Utilities {
         let homeNib = UINib(nibName: homeCellId, bundle: Bundle(for: type(of: self)))
         collectionView.register(homeNib, forCellWithReuseIdentifier: homeCellId)
         
+        collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        
         self.collectionView = collectionView
         self.view.addSubview(collectionView)
         collectionView.autoPinEdgesToSuperviewEdges()
+    }
+    
+    func prepareRefresher() {
+        
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(self.refreshNewShots))
+        header?.beginRefreshing()
+        collectionView?.mj_header = header
+        
+        let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreShots))
+        footer?.setTitle("No more shots", for: .noMoreData)
+        collectionView?.mj_footer = footer
+    }
+    
+    
+    @objc func refreshNewShots() {
+        
+        page = 1
+        DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
+            if let results = results {
+                //print(results[0].user?.avatar_url ?? "nil")
+                self.shots.removeAll()
+                for i in 0..<results.count {
+                    self.shots.append(HomeCellViewModel.init(model: results[i]))
+                }
+                //print(self.shots[0].userHeadImageUrl)
+                self.collectionView?.reloadData()
+            }
+            self.collectionView?.mj_header.endRefreshing()
+            self.collectionView?.mj_footer.endRefreshing()
+
+        }, failure: { (error) in
+            print(error?.localizedDescription ?? "Unknown Error")
+            self.collectionView?.mj_header.endRefreshing()
+            self.collectionView?.mj_footer.endRefreshing()
+        })
+    }
+    
+    @objc func loadMoreShots() {
+        
+        page += 1
+        DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
+            if let results = results {
+                //print(results[0].user?.avatar_url ?? "nil")
+                for i in 0..<results.count {
+                    self.shots.append(HomeCellViewModel.init(model: results[i]))
+                }
+                //print(self.shots[0].userHeadImageUrl)
+                self.collectionView?.reloadData()
+            }
+            self.collectionView?.mj_header.endRefreshing()
+            self.collectionView?.mj_footer.endRefreshing()
+            
+        }, failure: { (error) in
+            self.page -= 1
+            print(error?.localizedDescription ?? "Unknown Error")
+            self.collectionView?.mj_header.endRefreshing()
+            self.collectionView?.mj_footer.endRefreshing()
+        })
+        
+        //collectionView?.mj_footer.endRefreshingWithNoMoreData()
     }
 }
 
