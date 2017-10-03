@@ -24,12 +24,16 @@
 		D516DC431F60D9B60038A926 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC421F60D9B60038A926 /* Global.swift */; };
 		D516DC901F6B44C60038A926 /* SUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC8F1F6B44C60038A926 /* SUIViewController.swift */; };
 		D516DC921F6B45790038A926 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC911F6B45790038A926 /* NavigationController.swift */; };
-		D516DC941F6B65300038A926 /* TitleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC931F6B65300038A926 /* TitleMenuViewController.swift */; };
-		D516DC961F6B66420038A926 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC951F6B66420038A926 /* TitleView.swift */; };
 		D516DC981F6B679A0038A926 /* UIButton+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC971F6B679A0038A926 /* UIButton+Utilities.swift */; };
 		D516DC9A1F6B682C0038A926 /* UIView+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC991F6B682C0038A926 /* UIView+Size.swift */; };
 		D516DCA31F6B6B530038A926 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DCA21F6B6B530038A926 /* ExploreViewController.swift */; };
 		D516DCA51F6B6BB30038A926 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DCA41F6B6BB30038A926 /* PortfolioViewController.swift */; };
+		D5A3D8D41F7C8FCC00CDFEC3 /* TitleMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8D11F7C8E6D00CDFEC3 /* TitleMenuViewController.swift */; };
+		D5A3D8D51F7C900000CDFEC3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8D31F7C8E6D00CDFEC3 /* TitleView.swift */; };
+		D5A3D8DA1F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8D81F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift */; };
+		D5A3D8DB1F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A3D8D91F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib */; };
+		D5A3D8DD1F831A8700CDFEC3 /* PlayerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8DC1F831A8700CDFEC3 /* PlayerProfileViewController.swift */; };
+		D5A3D8DF1F831AAE00CDFEC3 /* ShotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8DE1F831AAE00CDFEC3 /* ShotDetailViewController.swift */; };
 		D5EFCFFC1F706C8B008EA87A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */; };
 		D5EFCFFF1F706DE3008EA87A /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */; };
 		D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFD0001F70849C008EA87A /* WKViewController.swift */; };
@@ -62,12 +66,16 @@
 		D516DC421F60D9B60038A926 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		D516DC8F1F6B44C60038A926 /* SUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIViewController.swift; sourceTree = "<group>"; };
 		D516DC911F6B45790038A926 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		D516DC931F6B65300038A926 /* TitleMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleMenuViewController.swift; path = Dribbble/Classes/UIComponent/Controller/TitleMenuViewController.swift; sourceTree = SOURCE_ROOT; };
-		D516DC951F6B66420038A926 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		D516DC971F6B679A0038A926 /* UIButton+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Utilities.swift"; sourceTree = "<group>"; };
 		D516DC991F6B682C0038A926 /* UIView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Size.swift"; sourceTree = "<group>"; };
 		D516DCA21F6B6B530038A926 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		D516DCA41F6B6BB30038A926 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		D5A3D8D11F7C8E6D00CDFEC3 /* TitleMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMenuViewController.swift; sourceTree = "<group>"; };
+		D5A3D8D31F7C8E6D00CDFEC3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		D5A3D8D81F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDetailViewCell.swift; sourceTree = "<group>"; };
+		D5A3D8D91F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioDetailViewCell.xib; sourceTree = "<group>"; };
+		D5A3D8DC1F831A8700CDFEC3 /* PlayerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewController.swift; sourceTree = "<group>"; };
+		D5A3D8DE1F831AAE00CDFEC3 /* ShotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailViewController.swift; sourceTree = "<group>"; };
 		D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D5EFD0001F70849C008EA87A /* WKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D516DC1E1F5F9FCD0038A926 /* Classes */,
+				D5A3D8CF1F7C8E6D00CDFEC3 /* UIComponent */,
 			);
 			path = Dribbble;
 			sourceTree = "<group>";
@@ -144,7 +153,6 @@
 				D516DC271F5F9FCD0038A926 /* Models */,
 				D516DC281F5F9FCD0038A926 /* Network */,
 				D516DC221F5F9FCD0038A926 /* Extension */,
-				D516DC291F5F9FCD0038A926 /* UIComponents */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				D516DC2A1F5FA02C0038A926 /* HomeViewController.swift */,
+				D5A3D8DE1F831AAE00CDFEC3 /* ShotDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,34 +249,6 @@
 				D516DC3E1F60C4500038A926 /* HTTPTools.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		D516DC291F5F9FCD0038A926 /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				D516DC481F6504900038A926 /* View */,
-				D516DC4A1F6504C20038A926 /* Controller */,
-			);
-			name = UIComponents;
-			path = UIConponents;
-			sourceTree = "<group>";
-		};
-		D516DC481F6504900038A926 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D516DC951F6B66420038A926 /* TitleView.swift */,
-			);
-			name = View;
-			path = Dribbble/Classes/UIComponent/View;
-			sourceTree = SOURCE_ROOT;
-		};
-		D516DC4A1F6504C20038A926 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D516DC931F6B65300038A926 /* TitleMenuViewController.swift */,
-			);
-			name = Controller;
-			path = ../UIComponent/View/Controller;
 			sourceTree = "<group>";
 		};
 		D516DC4E1F6505C00038A926 /* Explorer */ = {
@@ -328,6 +309,8 @@
 		D516DC9F1F6B6AFD0038A926 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5A3D8D81F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift */,
+				D5A3D8D91F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				D516DCA41F6B6BB30038A926 /* PortfolioViewController.swift */,
+				D5A3D8DC1F831A8700CDFEC3 /* PlayerProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -345,6 +329,32 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D5A3D8CF1F7C8E6D00CDFEC3 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D5A3D8D01F7C8E6D00CDFEC3 /* Controller */,
+				D5A3D8D21F7C8E6D00CDFEC3 /* View */,
+			);
+			name = UIComponent;
+			path = Dribbble/UIComponent;
+			sourceTree = SOURCE_ROOT;
+		};
+		D5A3D8D01F7C8E6D00CDFEC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5A3D8D11F7C8E6D00CDFEC3 /* TitleMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5A3D8D21F7C8E6D00CDFEC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5A3D8D31F7C8E6D00CDFEC3 /* TitleView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +422,7 @@
 			files = (
 				D5EFD0071F75C753008EA87A /* ExploreCollectionViewCell.xib in Resources */,
 				D516DC171F5F9EF10038A926 /* LaunchScreen.storyboard in Resources */,
+				D5A3D8DB1F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib in Resources */,
 				D516DC141F5F9EF10038A926 /* Assets.xcassets in Resources */,
 				D516DC121F5F9EF10038A926 /* Main.storyboard in Resources */,
 				D516DC311F5FAA9D0038A926 /* HomeCollectionViewCell.xib in Resources */,
@@ -487,16 +498,19 @@
 				D5EFCFFC1F706C8B008EA87A /* LoginViewController.swift in Sources */,
 				D516DC391F60B9BD0038A926 /* User.swift in Sources */,
 				D516DC921F6B45790038A926 /* NavigationController.swift in Sources */,
+				D5A3D8DF1F831AAE00CDFEC3 /* ShotDetailViewController.swift in Sources */,
 				D516DC331F5FAF470038A926 /* HomeCellVIewModel.swift in Sources */,
+				D5A3D8D41F7C8FCC00CDFEC3 /* TitleMenuViewController.swift in Sources */,
 				D516DCA51F6B6BB30038A926 /* PortfolioViewController.swift in Sources */,
-				D516DC941F6B65300038A926 /* TitleMenuViewController.swift in Sources */,
+				D5A3D8DA1F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift in Sources */,
 				D516DC9A1F6B682C0038A926 /* UIView+Size.swift in Sources */,
 				D516DC381F60B9BD0038A926 /* ShotImage.swift in Sources */,
 				D516DCA31F6B6B530038A926 /* ExploreViewController.swift in Sources */,
+				D5A3D8DD1F831A8700CDFEC3 /* PlayerProfileViewController.swift in Sources */,
 				D516DC301F5FAA9D0038A926 /* HomeCollectionViewCell.swift in Sources */,
 				D516DC411F60C90E0038A926 /* DataTools.swift in Sources */,
-				D516DC961F6B66420038A926 /* TitleView.swift in Sources */,
 				D5EFD0051F75C746008EA87A /* ExploreCellVIewModel.swift in Sources */,
+				D5A3D8D51F7C900000CDFEC3 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9485SFKVYM;
 				INFOPLIST_FILE = Dribbble/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Demo-Hetian.Dribbble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -638,6 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9485SFKVYM;
 				INFOPLIST_FILE = Dribbble/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Demo-Hetian.Dribbble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
