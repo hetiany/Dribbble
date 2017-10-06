@@ -42,9 +42,6 @@ let followShotEndPoint = "https://api.dribbble.com/v1/user/following/shots"
 //    }
 
 
-
-
-
 enum ContentType: String {
     case recent
     case popular

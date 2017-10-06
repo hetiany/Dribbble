@@ -79,13 +79,14 @@ fileprivate extension Utilities {
         // layout headImage
         let headImage = UIImageView()
         headImage.image = UIImage(named: "ContentImagePlaceHolder")
-        //headImage.contentMode = .scaleAspectFit
-        headImage.translatesAutoresizingMaskIntoConstraints = false
+        headImage.backgroundColor = .yellow
+        headImage.contentMode = .scaleAspectFit
+        //headImage.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(headImage)
         self.headImage = headImage
         headImage.autoSetDimensions(to: CGSize(width: 100, height: 100))
-        headImage.layer.cornerRadius = 50
-        headImage.layer.masksToBounds = true
+        //headImage.layer.cornerRadius = 30
+        //headImage.layer.masksToBounds = true
         headImage.autoPinEdge(toSuperviewEdge: .top, withInset: 100)
         headImage.autoAlignAxis(toSuperviewAxis: .vertical)
     
@@ -111,7 +112,8 @@ fileprivate extension Utilities {
                          WKWebsiteDataTypeDiskCache,
                          WKWebsiteDataTypeSessionStorage,
                          WKWebsiteDataTypeWebSQLDatabases,
-                         WKWebsiteDataTypeIndexedDBDatabases]
+                         WKWebsiteDataTypeIndexedDBDatabases,
+                         WKWebsiteDataTypeOfflineWebApplicationCache]
         let dataTypeSet = Set(dataTypes)
         WKWebsiteDataStore.default().removeData(ofTypes: dataTypeSet, modifiedSince: Date.distantPast, completionHandler: {
             DispatchQueue.main.async {
@@ -130,6 +132,9 @@ fileprivate extension Utilities {
         //tableView.backgroundColor = .gray
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        
         self.view.addSubview(tableView)
         self.tableView = tableView
         tableView.register(UINib(nibName: "PortfolioDetailViewCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "PortfolioDetailViewCell")

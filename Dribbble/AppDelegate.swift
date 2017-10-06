@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let account = AccountManager.shared
+        print(account.accessToken ?? "No Token")
         if account.hasAccessToken {
             window?.rootViewController = MainTabBarController()
         }
@@ -56,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        print("willTerminate: token = \(AccountManager.shared.accessToken ?? "No token")")
     }
 
 //    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

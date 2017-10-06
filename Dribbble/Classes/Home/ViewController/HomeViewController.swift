@@ -50,7 +50,7 @@ extension HomeViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let viewcontroller = ShotDetailViewController()
-        navigationController?.pushViewController(viewcontroller, animated: true)
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }
 

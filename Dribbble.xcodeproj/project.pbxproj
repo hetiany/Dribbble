@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50708771F8456B5001AB097 /* ShotDetailImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50708751F8456B5001AB097 /* ShotDetailImageViewCell.swift */; };
+		D50708781F8456B5001AB097 /* ShotDetailImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50708761F8456B5001AB097 /* ShotDetailImageViewCell.xib */; };
+		D507087B1F845DE0001AB097 /* ShotDetailTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50708791F845DE0001AB097 /* ShotDetailTitleViewCell.swift */; };
+		D507087C1F845DE0001AB097 /* ShotDetailTitleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D507087A1F845DE0001AB097 /* ShotDetailTitleViewCell.xib */; };
+		D507087F1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507087D1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift */; };
+		D50708801F845E1D001AB097 /* ShotDetailDescribeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D507087E1F845E1D001AB097 /* ShotDetailDescribeViewCell.xib */; };
+		D50708831F845E3E001AB097 /* ShotDetailCommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50708811F845E3E001AB097 /* ShotDetailCommentViewCell.swift */; };
+		D50708841F845E3E001AB097 /* ShotDetailCommentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50708821F845E3E001AB097 /* ShotDetailCommentViewCell.xib */; };
 		D516DC0D1F5F9EF10038A926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DC0C1F5F9EF10038A926 /* AppDelegate.swift */; };
 		D516DC121F5F9EF10038A926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D516DC101F5F9EF10038A926 /* Main.storyboard */; };
 		D516DC141F5F9EF10038A926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D516DC131F5F9EF10038A926 /* Assets.xcassets */; };
@@ -47,6 +55,14 @@
 		65FD236354373EB400E8D08C /* Pods-Dribbble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble/Pods-Dribbble.debug.xcconfig"; sourceTree = "<group>"; };
 		7EC8A42DB40017D586CB550F /* Pods-Dribbble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble/Pods-Dribbble.release.xcconfig"; sourceTree = "<group>"; };
 		CC7D9EB8EAEDAFEE763B11CB /* Pods_Dribbble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50708751F8456B5001AB097 /* ShotDetailImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailImageViewCell.swift; sourceTree = "<group>"; };
+		D50708761F8456B5001AB097 /* ShotDetailImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotDetailImageViewCell.xib; sourceTree = "<group>"; };
+		D50708791F845DE0001AB097 /* ShotDetailTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailTitleViewCell.swift; sourceTree = "<group>"; };
+		D507087A1F845DE0001AB097 /* ShotDetailTitleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotDetailTitleViewCell.xib; sourceTree = "<group>"; };
+		D507087D1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailDescribeViewCell.swift; sourceTree = "<group>"; };
+		D507087E1F845E1D001AB097 /* ShotDetailDescribeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotDetailDescribeViewCell.xib; sourceTree = "<group>"; };
+		D50708811F845E3E001AB097 /* ShotDetailCommentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailCommentViewCell.swift; sourceTree = "<group>"; };
+		D50708821F845E3E001AB097 /* ShotDetailCommentViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotDetailCommentViewCell.xib; sourceTree = "<group>"; };
 		D516DC091F5F9EF10038A926 /* Dribbble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribbble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D516DC0C1F5F9EF10038A926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		D516DC111F5F9EF10038A926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +228,14 @@
 			children = (
 				D516DC2E1F5FAA9D0038A926 /* HomeCollectionViewCell.swift */,
 				D516DC2F1F5FAA9D0038A926 /* HomeCollectionViewCell.xib */,
+				D50708751F8456B5001AB097 /* ShotDetailImageViewCell.swift */,
+				D50708761F8456B5001AB097 /* ShotDetailImageViewCell.xib */,
+				D50708791F845DE0001AB097 /* ShotDetailTitleViewCell.swift */,
+				D507087A1F845DE0001AB097 /* ShotDetailTitleViewCell.xib */,
+				D507087D1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift */,
+				D507087E1F845E1D001AB097 /* ShotDetailDescribeViewCell.xib */,
+				D50708811F845E3E001AB097 /* ShotDetailCommentViewCell.swift */,
+				D50708821F845E3E001AB097 /* ShotDetailCommentViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,7 +411,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Hetian Yang";
 				TargetAttributes = {
 					D516DC081F5F9EF10038A926 = {
@@ -420,12 +444,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50708801F845E1D001AB097 /* ShotDetailDescribeViewCell.xib in Resources */,
+				D50708841F845E3E001AB097 /* ShotDetailCommentViewCell.xib in Resources */,
 				D5EFD0071F75C753008EA87A /* ExploreCollectionViewCell.xib in Resources */,
 				D516DC171F5F9EF10038A926 /* LaunchScreen.storyboard in Resources */,
+				D507087C1F845DE0001AB097 /* ShotDetailTitleViewCell.xib in Resources */,
 				D5A3D8DB1F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib in Resources */,
 				D516DC141F5F9EF10038A926 /* Assets.xcassets in Resources */,
 				D516DC121F5F9EF10038A926 /* Main.storyboard in Resources */,
 				D516DC311F5FAA9D0038A926 /* HomeCollectionViewCell.xib in Resources */,
+				D50708781F8456B5001AB097 /* ShotDetailImageViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,11 +514,14 @@
 			files = (
 				D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */,
 				D516DC0D1F5F9EF10038A926 /* AppDelegate.swift in Sources */,
+				D507087F1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift in Sources */,
 				D5EFD0031F75C70F008EA87A /* ExploreCollectionViewCell.swift in Sources */,
 				D516DC431F60D9B60038A926 /* Global.swift in Sources */,
 				D516DC901F6B44C60038A926 /* SUIViewController.swift in Sources */,
+				D507087B1F845DE0001AB097 /* ShotDetailTitleViewCell.swift in Sources */,
 				D516DC2B1F5FA02C0038A926 /* HomeViewController.swift in Sources */,
 				D516DC3F1F60C4500038A926 /* HTTPTools.swift in Sources */,
+				D50708771F8456B5001AB097 /* ShotDetailImageViewCell.swift in Sources */,
 				D516DC981F6B679A0038A926 /* UIButton+Utilities.swift in Sources */,
 				D516DC2D1F5FA9B10038A926 /* MainTabBarController.swift in Sources */,
 				D516DC351F60B9AF0038A926 /* Shot.swift in Sources */,
@@ -500,6 +531,7 @@
 				D516DC921F6B45790038A926 /* NavigationController.swift in Sources */,
 				D5A3D8DF1F831AAE00CDFEC3 /* ShotDetailViewController.swift in Sources */,
 				D516DC331F5FAF470038A926 /* HomeCellVIewModel.swift in Sources */,
+				D50708831F845E3E001AB097 /* ShotDetailCommentViewCell.swift in Sources */,
 				D5A3D8D41F7C8FCC00CDFEC3 /* TitleMenuViewController.swift in Sources */,
 				D516DCA51F6B6BB30038A926 /* PortfolioViewController.swift in Sources */,
 				D5A3D8DA1F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift in Sources */,
@@ -547,7 +579,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -555,7 +589,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -597,7 +635,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -605,7 +645,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -638,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9485SFKVYM;
 				INFOPLIST_FILE = Dribbble/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Demo-Hetian.Dribbble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,7 +697,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9485SFKVYM;
 				INFOPLIST_FILE = Dribbble/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Demo-Hetian.Dribbble";
 				PRODUCT_NAME = "$(TARGET_NAME)";
