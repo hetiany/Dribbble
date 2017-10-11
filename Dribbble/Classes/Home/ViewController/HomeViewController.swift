@@ -23,6 +23,7 @@ class HomeViewController: SUIViewController {
     var page: Int = 1
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         prepareCollectionView()
         prepareRefresher()
@@ -37,6 +38,7 @@ class HomeViewController: SUIViewController {
     }
     
     convenience init(contentType: ContentType) {
+        
         self.init(nibName: nil, bundle: nil)
         self.title = contentType.title
         self.contentType = contentType
@@ -47,20 +49,23 @@ class HomeViewController: SUIViewController {
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         
-        let viewcontroller = ShotDetailViewController()
-        self.navigationController?.pushViewController(viewcontroller, animated: false)
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//        
+//        let viewcontroller = ShotDetailViewController()
+//        self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return shots.count
     }
     
@@ -72,14 +77,12 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-fileprivate let ScreenHeight = UIScreen.main.bounds.height
-fileprivate let ScreenWidth = UIScreen.main.bounds.width
-
 
 fileprivate typealias Utilities = HomeViewController
 fileprivate extension Utilities {
     
     func prepareCollectionView() {
+        
         self.automaticallyAdjustsScrollViewInsets = false
         let layout = UICollectionViewFlowLayout()
         let itemSpacing: CGFloat = 5

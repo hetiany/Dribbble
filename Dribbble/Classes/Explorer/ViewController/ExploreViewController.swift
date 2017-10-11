@@ -59,6 +59,9 @@ class ExploreViewController: SUIViewController {
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let viewcontroller = PlayerProfileViewController()
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }
 
@@ -79,9 +82,6 @@ extension ExploreViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
-fileprivate let ScreenHeight = UIScreen.main.bounds.height
-fileprivate let ScreenWidth = UIScreen.main.bounds.width
 
 
 fileprivate typealias Utilities = ExploreViewController

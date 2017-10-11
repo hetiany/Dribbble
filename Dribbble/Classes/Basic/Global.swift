@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let accessParameter = "access_token="
 let pageParameter = "page="
@@ -31,8 +32,6 @@ let followShotEndPoint = "https://api.dribbble.com/v1/user/following/shots"
 
 
 
-
-
 //    func getToken() -> String?{
 //        return userDefault.object(forKey: Keys.kUserDefaultAccessToken) as? String
 //    }
@@ -54,5 +53,8 @@ enum ContentType: String {
         return self.rawValue
     }
 }
+
+let ScreenHeight = UIScreen.main.bounds.height
+let ScreenWidth = UIScreen.main.bounds.width
 
 

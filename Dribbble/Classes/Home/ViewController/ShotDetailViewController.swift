@@ -41,13 +41,18 @@ extension ShotDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailImageId, for: indexPath)
-            guard let shotImageCell = cell as? ShotDetailImageViewCell else {
-                fatalError("Invalid reuse id")
-                return UITableViewCell()
-            }
-            shotImageCell.updateUI()
-            return shotImageCell
+//            let cell = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailImageId, for: indexPath)
+//
+//            guard let shotImageCell = cell as? ShotDetailImageViewCell else {
+//                fatalError("Invalid reuse id")
+//                return UITableViewCell()
+//            }
+//            shotImageCell.updateUI()
+//            return shotImageCell
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: shotDetailImageId, for: indexPath) as! ShotDetailImageViewCell
+            cell.updateUI()
+            return cell
         }
         else if indexPath.section == 1{
             if indexPath.row == 0 {
@@ -99,9 +104,9 @@ extension ShotDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
         if section == 1 {
-            if #available(iOS 11.0, *) {
-                return UITableViewAutomaticDimension
-            }
+//            if #available(iOS 11.0, *) {
+//                return UITableViewAutomaticDimension
+//            }
             return 120
         }
         return 0
@@ -113,7 +118,7 @@ fileprivate extension Utilities {
     
     func prepareTableView() {
         
-        let tableView = UITableView(frame: view.frame, style: .plain)
+        let tableView = UITableView(frame: self.view.frame, style: .plain)
         //tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 2
         //tableView.sectionHeaderHeight = UITableViewAutomaticDimension

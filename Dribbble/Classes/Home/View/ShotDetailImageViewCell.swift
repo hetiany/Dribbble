@@ -23,7 +23,7 @@ class ShotDetailImageViewCell: UITableViewCell {
         shotDetailImage.contentMode = .scaleAspectFit
         shotDetailImage.translatesAutoresizingMaskIntoConstraints = false
         
-        shotHeight = NSLayoutConstraint(item: shotDetailImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 0.0, constant: 90)
+        shotHeight = NSLayoutConstraint(item: shotDetailImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 0.0, constant: 0)
         shotDetailImage.addConstraint(shotHeight)
     }
     
@@ -37,6 +37,6 @@ class ShotDetailImageViewCell: UITableViewCell {
         //print("old shotHeight \(shotHeight.constant)")
         shotHeight.constant = shotHeightValue
         //print("new shotHeight \(shotHeight.constant)")
-        self.layoutIfNeeded()
+        //self.layoutIfNeeded()
     }
 }

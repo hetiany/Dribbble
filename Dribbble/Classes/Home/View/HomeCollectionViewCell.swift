@@ -29,6 +29,26 @@ class HomeCollectionViewCell: UICollectionViewCell {
         contentImageView.contentMode = .scaleAspectFit
         userHeadImageView.image = UIImage(named: "UserHeadPlaceHolder")
         contentImageView.image = UIImage(named: "ContentImagePlaceHolder")
+        
+        //Add Gesture to ContentImage
+        let tapContentImage = UITapGestureRecognizer(target:self,action:#selector(tapContent))
+        //tapContentImage.numberOfTapsRequired = 1
+        //tapContentImage.numberOfTouchesRequired = 1
+        self.contentImageView.isUserInteractionEnabled = true
+        self.contentImageView.addGestureRecognizer(tapContentImage)
+        
+        //Add Gesture to UserHeader
+        let tapUserHeader = UITapGestureRecognizer(target: self, action: #selector(tapHeader))
+        self.userHeadImageView.isUserInteractionEnabled = true
+        self.userHeadImageView.addGestureRecognizer(tapUserHeader)
+    }
+    
+    @objc func tapContent() {
+        print("Image")
+    }
+    
+    @objc func tapHeader() {
+        print("Header")
     }
     
     func updateUI() {
