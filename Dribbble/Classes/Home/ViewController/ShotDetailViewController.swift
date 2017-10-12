@@ -12,20 +12,22 @@ class ShotDetailViewController: UIViewController {
 
     fileprivate var shotTableView: UITableView?
     fileprivate let shotDetailImageId = "ShotDetailImageViewCell"
-    fileprivate let shotDetailTitleId = "ShotDetailTitleViewCell"
+    //fileprivate let shotDetailTitleId = "ShotDetailTitleViewCell"
+    fileprivate let shotDetailTitleId = "ShotDetailTitleView"
     fileprivate let shotDetailDescribeId = "ShotDetailDescribeViewCell"
     fileprivate let shotDetailCommentId = "ShotDetailCommentViewCell"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         prepareTableView()
-        // Do any additional setup after loading the view.
     }
 
 }
 
 extension ShotDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 2
     }
     
@@ -50,29 +52,19 @@ extension ShotDetailViewController: UITableViewDataSource {
 //            shotImageCell.updateUI()
 //            return shotImageCell
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: shotDetailImageId, for: indexPath) as! ShotDetailImageViewCell
-            cell.updateUI()
-            return cell
+            let shotImageCell = tableView.dequeueReusableCell(withIdentifier: shotDetailImageId, for: indexPath) as! ShotDetailImageViewCell
+            shotImageCell.updateUI()
+            return shotImageCell
         }
-        else if indexPath.section == 1{
+        else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                let cell = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailDescribeId, for: indexPath)
-                guard let shotDescribeCell = cell as? ShotDetailDescribeViewCell else {
-                    fatalError("Invalid reuse id")
-                    return UITableViewCell()
-                }
+                let shotDescribeCell = tableView.dequeueReusableCell(withIdentifier: shotDetailDescribeId, for: indexPath) as! ShotDetailDescribeViewCell
                 return shotDescribeCell
             }
             else {
-                let cell = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailCommentId, for: indexPath)
-                guard let shotCommentCell = cell as? ShotDetailCommentViewCell else {
-                    fatalError("Invalid reuse id")
-                    return UITableViewCell()
-                }
+                let shotCommentCell = tableView.dequeueReusableCell(withIdentifier: shotDetailCommentId, for: indexPath) as!ShotDetailCommentViewCell
                 return shotCommentCell
-                
             }
-
         }
         return UITableViewCell()
     }
@@ -81,13 +73,12 @@ extension ShotDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         if section == 1 {
-            //let cell = shotTableView?.dequeueReusableHeaderFooterView(withIdentifier: shotDetailTitleId)
-            //let header = cell as? ShotDetailTitleView
-            //let header = ShotDetailTitleView(reuseIdentifier: shotDetailTitleId)
-            //header.backgroundView?.backgroundColor = bgColor
-
-            let header = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailTitleId) as? ShotDetailTitleViewCell
-            header?.backgroundColor = .white
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: shotDetailTitleId) as! ShotDetailTitleView
+            
+        // Using Cell as Header
+//            let header = shotTableView?.dequeueReusableCell(withIdentifier: shotDetailTitleId) as? ShotDetailTitleViewCell
+            
+            header.contentView.backgroundColor = .white            
             return header
         }
        return UIView()
@@ -99,14 +90,13 @@ extension ShotDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
-
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
         if section == 1 {
-//            if #available(iOS 11.0, *) {
-//                return UITableViewAutomaticDimension
-//            }
+            if #available(iOS 11.0, *) {
+                //return UITableViewAutomaticDimension
+            }
             return 120
         }
         return 0
@@ -131,15 +121,14 @@ fileprivate extension Utilities {
             
         }
         
-        
-        // MARK: register xibs
+        // MARK: - register xibs
         let shotDetailImageNib = UINib(nibName: shotDetailImageId, bundle: Bundle(for: type(of: self)))
         tableView.register(shotDetailImageNib, forCellReuseIdentifier: shotDetailImageId)
         
         
         let shotDetailTitleNib = UINib(nibName: shotDetailTitleId, bundle: Bundle(for: type(of: self)))
-        //tableView.register(shotDetailTitleNib, forHeaderFooterViewReuseIdentifier: shotDetailTitleId)
-        tableView.register(shotDetailTitleNib, forCellReuseIdentifier: shotDetailTitleId)
+        tableView.register(shotDetailTitleNib, forHeaderFooterViewReuseIdentifier: shotDetailTitleId)
+        //tableView.register(shotDetailTitleNib, forCellReuseIdentifier: shotDetailTitleId)
         
         
         let shotDetailDescribeNib = UINib(nibName: shotDetailDescribeId, bundle: nil)

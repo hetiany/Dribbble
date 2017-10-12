@@ -50,6 +50,8 @@
 		D5A3D8DF1F831AAE00CDFEC3 /* ShotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A3D8DE1F831AAE00CDFEC3 /* ShotDetailViewController.swift */; };
 		D5CFA99E1F8DC1C400ED4257 /* PlayerShotSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CFA99C1F8DC1C400ED4257 /* PlayerShotSummaryView.swift */; };
 		D5CFA99F1F8DC1C400ED4257 /* PlayerShotSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CFA99D1F8DC1C400ED4257 /* PlayerShotSummaryView.xib */; };
+		D5CFA9A11F8F063D00ED4257 /* ShotDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CFA9A01F8F063D00ED4257 /* ShotDetailTitleView.swift */; };
+		D5CFA9A31F8F065A00ED4257 /* ShotDetailTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CFA9A21F8F065A00ED4257 /* ShotDetailTitleView.xib */; };
 		D5EFCFFC1F706C8B008EA87A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */; };
 		D5EFCFFF1F706DE3008EA87A /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */; };
 		D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EFD0001F70849C008EA87A /* WKViewController.swift */; };
@@ -108,6 +110,8 @@
 		D5A3D8DE1F831AAE00CDFEC3 /* ShotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailViewController.swift; sourceTree = "<group>"; };
 		D5CFA99C1F8DC1C400ED4257 /* PlayerShotSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerShotSummaryView.swift; sourceTree = "<group>"; };
 		D5CFA99D1F8DC1C400ED4257 /* PlayerShotSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerShotSummaryView.xib; sourceTree = "<group>"; };
+		D5CFA9A01F8F063D00ED4257 /* ShotDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailTitleView.swift; sourceTree = "<group>"; };
+		D5CFA9A21F8F065A00ED4257 /* ShotDetailTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotDetailTitleView.xib; sourceTree = "<group>"; };
 		D5EFCFFA1F706C8B008EA87A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5EFCFFE1F706DE3008EA87A /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D5EFD0001F70849C008EA87A /* WKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				D507087E1F845E1D001AB097 /* ShotDetailDescribeViewCell.xib */,
 				D50708811F845E3E001AB097 /* ShotDetailCommentViewCell.swift */,
 				D50708821F845E3E001AB097 /* ShotDetailCommentViewCell.xib */,
+				D5CFA9A01F8F063D00ED4257 /* ShotDetailTitleView.swift */,
+				D5CFA9A21F8F065A00ED4257 /* ShotDetailTitleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				D5A3D8DB1F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib in Resources */,
 				D5CFA99F1F8DC1C400ED4257 /* PlayerShotSummaryView.xib in Resources */,
 				D5752E631F88592D0099B716 /* ThreeEqualTableViewCell.xib in Resources */,
+				D5CFA9A31F8F065A00ED4257 /* ShotDetailTitleView.xib in Resources */,
 				D516DC141F5F9EF10038A926 /* Assets.xcassets in Resources */,
 				D5752E671F8871FA0099B716 /* PlayerShotViewCell.xib in Resources */,
 				D516DC121F5F9EF10038A926 /* Main.storyboard in Resources */,
@@ -542,6 +549,7 @@
 			files = (
 				D5EFD0011F70849C008EA87A /* WKViewController.swift in Sources */,
 				D516DC0D1F5F9EF10038A926 /* AppDelegate.swift in Sources */,
+				D5CFA9A11F8F063D00ED4257 /* ShotDetailTitleView.swift in Sources */,
 				D507087F1F845E1D001AB097 /* ShotDetailDescribeViewCell.swift in Sources */,
 				D5EFD0031F75C70F008EA87A /* ExploreCollectionViewCell.swift in Sources */,
 				D5752E621F88592D0099B716 /* ThreeEqualTableViewCell.swift in Sources */,

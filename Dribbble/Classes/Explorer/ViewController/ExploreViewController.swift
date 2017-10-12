@@ -21,6 +21,7 @@ class ExploreViewController: SUIViewController {
     var page = 1
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         prepareCollectionView()
         prepareRefresher()
@@ -48,6 +49,7 @@ class ExploreViewController: SUIViewController {
     }
     
     convenience init(contentType: ContentType) {
+        
         self.init(nibName: nil, bundle: nil)
         self.title = contentType.title
         self.contentType = contentType
@@ -58,20 +60,21 @@ class ExploreViewController: SUIViewController {
 // MARK: - UICollectionViewDelegate
 extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         
-        let viewcontroller = PlayerProfileViewController()
-        self.navigationController?.pushViewController(viewcontroller, animated: false)
-    }
+        //collectionView.deselectItem(at: indexPath, animated: true)
+        let viewcontroller = ShotDetailViewController()
+        self.navigationController?.pushViewController(viewcontroller, animated: false)    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension ExploreViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return shots.count
     }
     
@@ -171,8 +174,7 @@ fileprivate extension Utilities {
             print(error?.localizedDescription ?? "Unknown Error")
             self.collectionView?.mj_header.endRefreshing()
             self.collectionView?.mj_footer.endRefreshing()
-        })
-        
+        })        
         //collectionView?.mj_footer.endRefreshingWithNoMoreData()
     }
 }

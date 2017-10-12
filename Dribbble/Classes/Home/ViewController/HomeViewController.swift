@@ -13,13 +13,11 @@ import MJRefresh
 
 class HomeViewController: SUIViewController {
     
-    fileprivate weak var collectionView: UICollectionView?
+    fileprivate var collectionView: UICollectionView?
     fileprivate let homeCellId = "HomeCollectionViewCell"
     
     var shots: [HomeCellViewModel] = []
-        
     var contentType: ContentType = .recent
-    
     var page: Int = 1
 
     override func viewDidLoad() {
@@ -50,10 +48,9 @@ class HomeViewController: SUIViewController {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        
-//        let viewcontroller = ShotDetailViewController()
-//        self.navigationController?.pushViewController(viewcontroller, animated: false)
+        //collectionView.deselectItem(at: indexPath, animated: true)
+        let viewcontroller = ShotDetailViewController()
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }
 
@@ -72,11 +69,40 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCellId, for: indexPath) as! HomeCollectionViewCell
+        cell.delegate = self
+
+        //MARK: - Using Closure
+//        cell.tapUserHeader = ({ [weak self] (cell) -> () in
+//
+//            let viewcontroller = PlayerProfileViewController()
+//            self?.navigationController?.pushViewController(viewcontroller, animated: false)
+//        })
+//
+//        cell.tapUserName = ({ [weak self] (cell) -> () in
+//
+//            let viewcontroller = PlayerProfileViewController()
+//            self?.navigationController?.pushViewController(viewcontroller, animated: false)
+//        })
+        
         cell.displayObject = shots[indexPath.row]
         return cell
     }
 }
 
+//MARK: - HomeCollectionViewCellDelegate
+extension HomeViewController: HomeCollectionViewCellDelegate {
+    func homeCellDidTapUserName(_ cell: HomeCollectionViewCell) {
+        
+        let viewcontroller = PlayerProfileViewController()
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
+    }
+    
+    func homeCellDidTapUserHeader(_ cell: HomeCollectionViewCell) {
+        
+        let viewcontroller = PlayerProfileViewController()
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
+    }
+}
 
 fileprivate typealias Utilities = HomeViewController
 fileprivate extension Utilities {
@@ -98,6 +124,7 @@ fileprivate extension Utilities {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         //collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         let homeNib = UINib(nibName: homeCellId, bundle: Bundle(for: type(of: self)))

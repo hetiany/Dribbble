@@ -9,12 +9,26 @@
 import UIKit
 import SDWebImage
 
+protocol HomeCollectionViewCellDelegate: class {
+    
+    func homeCellDidTapUserHeader(_ cell: HomeCollectionViewCell)
+    func homeCellDidTapUserName(_ cell: HomeCollectionViewCell)
+}
+
 class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var userHeadImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    //MARK: - Using Delegate
+    weak var delegate: HomeCollectionViewCellDelegate?
+    
+    //MARK: - Using Closure
+    var tapUserHeader : ((HomeCollectionViewCell) -> ())?
+    var tapUserName: ((HomeCollectionViewCell) -> ())?
+    
     
     var displayObject: HomeCellViewModel? {
         didSet {
@@ -30,25 +44,29 @@ class HomeCollectionViewCell: UICollectionViewCell {
         userHeadImageView.image = UIImage(named: "UserHeadPlaceHolder")
         contentImageView.image = UIImage(named: "ContentImagePlaceHolder")
         
-        //Add Gesture to ContentImage
-        let tapContentImage = UITapGestureRecognizer(target:self,action:#selector(tapContent))
-        //tapContentImage.numberOfTapsRequired = 1
-        //tapContentImage.numberOfTouchesRequired = 1
-        self.contentImageView.isUserInteractionEnabled = true
-        self.contentImageView.addGestureRecognizer(tapContentImage)
-        
         //Add Gesture to UserHeader
         let tapUserHeader = UITapGestureRecognizer(target: self, action: #selector(tapHeader))
         self.userHeadImageView.isUserInteractionEnabled = true
         self.userHeadImageView.addGestureRecognizer(tapUserHeader)
-    }
-    
-    @objc func tapContent() {
-        print("Image")
+        
+        //Add Gesture to UserName
+        let tapUserName = UITapGestureRecognizer(target: self, action: #selector(tapName))
+        self.userNameLabel.isUserInteractionEnabled = true
+        self.userNameLabel.addGestureRecognizer(tapUserName)
     }
     
     @objc func tapHeader() {
+        
         print("Header")
+        delegate?.homeCellDidTapUserHeader(self)
+        //tapUserHeader?(self)
+    }
+    
+    @objc func tapName() {
+        
+        print("Name")
+        delegate?.homeCellDidTapUserName(self)
+        //tapUserName?(self)
     }
     
     func updateUI() {
