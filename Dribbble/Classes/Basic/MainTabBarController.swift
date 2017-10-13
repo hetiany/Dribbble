@@ -70,8 +70,8 @@ fileprivate extension Utilities {
         vc.tabBarItem.image = UIImage(named: imageStr)
         vc.tabBarItem.selectedImage = UIImage(named: imageStr + "-click")
         
-        // ??
-//        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         
         let nav = NavigationController(rootViewController: vc)
         self.addChildViewController(nav)
@@ -82,14 +82,14 @@ fileprivate extension Utilities {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         let color = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.95)
         
-// ???
-//        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-//        color.setFill()3
-//        UIRectFill(rect)
+
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
         
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        self.tabBar.backgroundImage = image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.tabBar.backgroundImage = image
     }
 
 }
