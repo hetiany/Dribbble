@@ -91,11 +91,21 @@ fileprivate typealias Utilities = ExploreViewController
 fileprivate extension Utilities {
     
     func prepareCollectionView() {
-        
+    
         let layout = UICollectionViewFlowLayout()
+        
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         let itemSpacing: CGFloat = 5
-        let itemWidth = (ScreenWidth - itemSpacing * 3) / 2
-        let itemHeight = ScreenHeight / 3
+        //let itemWidth = (ScreenWidth - layout.sectionInset.left - layout.sectionInset.right - itemSpacing * 2) / 3
+        let itemWidth = (ScreenWidth - layout.sectionInset.left - layout.sectionInset.right - itemSpacing) / 2
+        //let itemHeight = ScreenHeight / 5
+        let itemHeight = itemWidth * 3 / 4
+        
+        print("ScreenWidth is \(ScreenWidth)")
+        print("ScreenHeight is \(ScreenHeight)")
+        
+        print("itemWidth is \(itemWidth)")
+        print("itemHeight is \(itemHeight)")
         
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumLineSpacing = itemSpacing
@@ -106,13 +116,14 @@ fileprivate extension Utilities {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         //collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .groupTableViewBackground
         let exploreNib = UINib(nibName: exploreCellId, bundle: Bundle(for: type(of: self)))
         collectionView.register(exploreNib, forCellWithReuseIdentifier: exploreCellId)
         
-        collectionView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
-        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
         self.collectionView = collectionView
         self.view.addSubview(collectionView)

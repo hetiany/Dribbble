@@ -23,7 +23,7 @@ fileprivate typealias Utilities = MainTabBarController
 fileprivate extension Utilities {
     
     func setupChildViewController() {
-        let vc1 = HomeViewController(contentType: .recent)
+        let vc1 = HomeViewControllerMVVM(contentType: .recent)
         //let label = UILabel()
 //        label.text = "VC1"
 //        vc1.view.addSubview(label)
@@ -31,7 +31,7 @@ fileprivate extension Utilities {
 //        label.autoPinEdgesToSuperviewEdges()
         //vc1.title = "Recent"
         
-        let vc2 = HomeViewController(contentType: .popular)
+        let vc2 = HomeViewControllerMVVM(contentType: .popular)
         //let label2 = UILabel()
         //label2.text = "VC2"
         //vc2.view.addSubview(label2)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerProfileViewController: UIViewController {
+class PlayerProfileViewController: SUIViewController {
     
     fileprivate var playerCollectionView: UICollectionView?
     

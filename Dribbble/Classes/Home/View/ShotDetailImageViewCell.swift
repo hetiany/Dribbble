@@ -34,6 +34,7 @@ class ShotDetailImageViewCell: UITableViewCell {
         let ratio = height / width
         let cellWidth = UIScreen.main.bounds.width
         let shotHeightValue = ratio * cellWidth
+        
         //print("old shotHeight \(shotHeight.constant)")
         shotHeight.constant = shotHeightValue
         //print("new shotHeight \(shotHeight.constant)")

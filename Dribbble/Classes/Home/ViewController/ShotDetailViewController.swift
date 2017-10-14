@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShotDetailViewController: UIViewController {
+class ShotDetailViewController: SUIViewController {
 
     fileprivate var shotTableView: UITableView?
     fileprivate let shotDetailImageId = "ShotDetailImageViewCell"
