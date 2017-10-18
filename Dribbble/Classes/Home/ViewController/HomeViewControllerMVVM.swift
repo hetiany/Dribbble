@@ -45,12 +45,15 @@ class HomeViewControllerMVVM: SUIViewController {
 extension HomeViewControllerMVVM: HomeViewDataManagerDelegate {
     
     func homeViewDataManager(_ manager: HomeViewDataManager, didTapUser: String) {
+        
         let viewcontroller = PlayerProfileViewController()
         self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
     
     func homeViewDidSelectCell(_ manager: HomeViewDataManager, didTapCell: String) {
-        let viewcontroller = ShotDetailViewController()
+        
+        //let viewcontroller = ShotDetailViewController()
+        let viewcontroller = ShotDetailViewControllerMVVM()
         self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
     

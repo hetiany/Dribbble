@@ -9,7 +9,7 @@
 import Foundation
 
 class DataTools {
-    static let accoutManager = AccountManager.shared
+    static let accountManager = AccountManager.shared
     static func fetchShots(
         contentTpye: ContentType,
         page: Int,
@@ -20,36 +20,36 @@ class DataTools {
         switch contentTpye {
         case .recent:
             print("recent")
-            urlStr = shotsRecentEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsRecentEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
             
         case .popular:
             print("popular")
-            urlStr = shotsPopularEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsPopularEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
 
         case .following:
             print("following")
-            urlStr = shotsFollowingEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsFollowingEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
 
         case .debuts:
             print("debuts")
-            urlStr = shotsDebutsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsDebutsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
             
         case .teams:
             print("teams")
-            urlStr = shotsTeamsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsTeamsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
             
         case .playoffs:
             print("playoffs")
-            urlStr = shotsPlayoffsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accoutManager.accessToken!)
+            urlStr = shotsPlayoffsEndPoint.appending(pageParameter + String(page) + "&" + accessParameter + accountManager.accessToken!)
             break
         }
         
-        //let urlStr = shotsPopularEndPoint.appending(accessParameter + accoutManager.accessToken!)
+        //let urlStr = shotsPopularEndPoint.appending(accessParameter + accountManager.accessToken!)
         HTTPTools.get(urlStr: urlStr, success: { (any) in
             
             if let any = any {
@@ -75,5 +75,13 @@ class DataTools {
             (error) in
             failure(error)
         })
+    }
+    
+    static func fetchComment(
+        page: Int,
+        success: @escaping ([Comment]?) -> (),
+        failure: @escaping (Error?) -> ()) {
+        
+        
     }
 }

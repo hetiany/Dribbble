@@ -10,10 +10,15 @@ import Foundation
 
 
 class HomeCellViewModel {
-    var userHeadImageUrl: URL
-    var userName: String
-    var contentImageUrl: URL
-    var title: String
+    var userHeadImageUrl: URL?
+    var userName: String?
+    var contentImageUrl: URL?
+    var title: String?
+    var creatTime: String?
+    var likeCount: Int?
+    var commentCount: Int?
+    var description: String?
+
     
 //    init(model: Shot) {
 //        self.userHeadImageUrl = URL(string: "https://d13yacurqjgara.cloudfront.net/users/1/avatars/normal/dc.jpg?1371679243")!
@@ -23,10 +28,14 @@ class HomeCellViewModel {
 //    }
     
     init(model: Shot) {
-        self.userHeadImageUrl = URL(string: (model.user?.avatar_url ?? ""))!
+        self.userHeadImageUrl = URL(string: (model.user?.avatar_url ?? ""))
         self.userName = model.user?.name ?? "nil"
-        self.contentImageUrl = URL(string: (model.images?.teaser ?? ""))!
+        self.contentImageUrl = URL(string: (model.images?.normal ?? ""))
         self.title = model.title ?? "nil"
+        self.creatTime = model.created_at
+        self.likeCount = model.likes_count
+        self.commentCount = model.likes_count
+        self.description = model.description
     }
 }
 

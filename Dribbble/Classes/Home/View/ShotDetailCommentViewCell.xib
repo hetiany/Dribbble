@@ -38,12 +38,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4P-jl-tMA">
-                        <rect key="frame" x="140" y="101.5" width="31.5" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="This is a great design, like your style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-Ha-s2q">
                         <rect key="frame" x="49" y="38.5" width="248" height="57"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -58,9 +52,6 @@
                     <constraint firstItem="9Er-tc-asV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="E8y-UY-SCj"/>
                     <constraint firstItem="9Er-tc-asV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="NdM-3c-hMY"/>
                     <constraint firstItem="60s-In-7dD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="PeM-Vj-9Pe"/>
-                    <constraint firstItem="q4P-jl-tMA" firstAttribute="top" secondItem="oIh-Ha-s2q" secondAttribute="bottom" constant="6" id="WbZ-j6-AYl"/>
-                    <constraint firstItem="q4P-jl-tMA" firstAttribute="leading" secondItem="VRP-Nu-b1m" secondAttribute="trailing" constant="50" id="Wz7-YL-3Je"/>
-                    <constraint firstAttribute="bottom" secondItem="q4P-jl-tMA" secondAttribute="bottom" constant="12" id="cAu-MO-nms"/>
                     <constraint firstItem="60s-In-7dD" firstAttribute="leading" secondItem="9Er-tc-asV" secondAttribute="trailing" constant="12" id="dV5-kf-tfo"/>
                     <constraint firstItem="oIh-Ha-s2q" firstAttribute="top" secondItem="60s-In-7dD" secondAttribute="bottom" constant="6" id="jrj-KB-hfN"/>
                     <constraint firstItem="VRP-Nu-b1m" firstAttribute="top" secondItem="oIh-Ha-s2q" secondAttribute="bottom" constant="6" id="k4x-bK-d91"/>

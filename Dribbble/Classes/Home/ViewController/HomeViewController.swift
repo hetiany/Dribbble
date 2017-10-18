@@ -16,7 +16,8 @@ class HomeViewController: SUIViewController {
     fileprivate var collectionView: UICollectionView?
     fileprivate let homeCellId = "HomeCollectionViewCell"
     
-    var shots: [HomeCellViewModel] = []
+    var displayShots: [HomeCellViewModel] = []
+    var shots: [Shot] = []
     var contentType: ContentType = .recent
     var page: Int = 1
 
@@ -44,15 +45,6 @@ class HomeViewController: SUIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //collectionView.deselectItem(at: indexPath, animated: true)
-        let viewcontroller = ShotDetailViewController()
-        self.navigationController?.pushViewController(viewcontroller, animated: false)
-    }
-}
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
@@ -84,8 +76,19 @@ extension HomeViewController: UICollectionViewDataSource {
 //            self?.navigationController?.pushViewController(viewcontroller, animated: false)
 //        })
         
-        cell.displayObject = shots[indexPath.row]
+        cell.displayObject = displayShots[indexPath.row]
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //collectionView.deselectItem(at: indexPath, animated: true)
+        let viewcontroller = ShotDetailViewController(model: shots[indexPath.row])
+        //viewcontroller.shotDetailImageDescript = displayShots[indexPath.row]
+        self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }
 
@@ -155,12 +158,12 @@ fileprivate extension Utilities {
         page = 1
         DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
             if let results = results {
-                //print(results[0].user?.avatar_url ?? "nil")
                 self.shots.removeAll()
+                self.displayShots.removeAll()
+                self.shots = results
                 for i in 0..<results.count {
-                    self.shots.append(HomeCellViewModel.init(model: results[i]))
+                    self.displayShots.append(HomeCellViewModel.init(model: results[i]))
                 }
-                //print(self.shots[0].userHeadImageUrl)
                 self.collectionView?.reloadData()
             }
             self.collectionView?.mj_header.endRefreshing()
@@ -178,11 +181,10 @@ fileprivate extension Utilities {
         page += 1
         DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
             if let results = results {
-                //print(results[0].user?.avatar_url ?? "nil")
                 for i in 0..<results.count {
-                    self.shots.append(HomeCellViewModel.init(model: results[i]))
+                    self.shots.append(results[i])
+                    self.displayShots.append(HomeCellViewModel.init(model: results[i]))
                 }
-                //print(self.shots[0].userHeadImageUrl)
                 self.collectionView?.reloadData()
             }
             self.collectionView?.mj_header.endRefreshing()

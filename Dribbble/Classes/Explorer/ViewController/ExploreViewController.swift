@@ -62,8 +62,9 @@ extension ExploreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         //collectionView.deselectItem(at: indexPath, animated: true)
-        let viewcontroller = ShotDetailViewController()
-        self.navigationController?.pushViewController(viewcontroller, animated: false)    }
+        //let viewcontroller = ShotDetailViewController()
+        //self.navigationController?.pushViewController(viewcontroller, animated: false)        
+    }
 }
 
 // MARK: - UICollectionViewDataSource

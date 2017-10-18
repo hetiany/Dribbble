@@ -10,6 +10,8 @@ import UIKit
 
 class ShotDetailDescribeViewCell: UITableViewCell {
 
+    @IBOutlet weak var shotDescribe: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,8 @@ class ShotDetailDescribeViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func updateUI() {
+        
+        
+    }
 }

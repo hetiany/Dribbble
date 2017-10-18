@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ShotDetailImageViewCell: UITableViewCell {
     
     @IBOutlet weak var shotDetailImage: UIImageView!
     //@IBOutlet weak var shotHeight: NSLayoutConstraint?
-    
     var shotHeight: NSLayoutConstraint!
-
+    var displayURL: URL?
     
     override func awakeFromNib() {
         
@@ -29,15 +29,20 @@ class ShotDetailImageViewCell: UITableViewCell {
     
     func updateUI() {
         
-        let height: CGFloat = 270
-        let width: CGFloat = 480
-        let ratio = height / width
+        let ratio = (CGFloat)(3.0 / 4.0)
+        print("ratio\(ratio)")
         let cellWidth = UIScreen.main.bounds.width
         let shotHeightValue = ratio * cellWidth
-        
-        //print("old shotHeight \(shotHeight.constant)")
+       // print("old shotHeight \(shotHeight.constant)")
         shotHeight.constant = shotHeightValue
         //print("new shotHeight \(shotHeight.constant)")
         //self.layoutIfNeeded()
+        
+        guard let displayURL = displayURL else {
+            //shotDetailImage.image = UIImage(named: "ContentImagePlaceHolder")
+            return
+        }
+        shotDetailImage.sd_setImage(with: displayURL)
+
     }
 }

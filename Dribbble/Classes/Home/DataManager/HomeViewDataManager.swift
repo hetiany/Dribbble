@@ -24,7 +24,8 @@ class HomeViewDataManager: NSObject {
     //weak var controller: HomeViewController?
     
     var homeCellId = "HomeCollectionViewCell"
-    var shots: [HomeCellViewModel] = []
+    var displayShots: [HomeCellViewModel] = []
+    var shots: [Shot] = []
     var contentType: ContentType = .recent
     
     fileprivate var page: Int = 1
@@ -58,6 +59,7 @@ extension HomeViewDataManager: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        
         delegate?.homeViewDidSelectCell(self, didTapCell: "")
     }
 }
@@ -71,14 +73,14 @@ extension HomeViewDataManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return shots.count
+        return displayShots.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCellId, for: indexPath) as! HomeCollectionViewCell
         cell.delegate = self
-        cell.displayObject = shots[indexPath.row]
+        cell.displayObject = displayShots[indexPath.row]
         return cell
     }
 }
@@ -87,20 +89,21 @@ extension HomeViewDataManager: UICollectionViewDataSource {
 extension HomeViewDataManager {
     
     func refreshAll() {
+        
         page = 1
         DataTools.fetchShots(contentTpye: contentType, page: page, success: { [weak self] (results) in
+            
             if let results = results {
-                
                 self?.shots.removeAll()
+                self?.displayShots.removeAll()
+                self?.shots = results
                 for i in 0..<results.count {
-                    self?.shots.append(HomeCellViewModel.init(model: results[i]))
+                    self?.displayShots.append(HomeCellViewModel.init(model: results[i]))
                 }
                 self?.delegate?.homeViewDataManagerReloadCollectionView()
             }
             self?.delegate?.homeViewDataManagerHeaderEndRefreshing()
             self?.delegate?.homeViewDataManagerHeaderEndRefreshing()
-
-            
         }, failure: { [weak self] (error) in
             print(error?.localizedDescription ?? "Unknown Error")
             self?.delegate?.homeViewDataManagerHeaderEndRefreshing()
@@ -110,11 +113,13 @@ extension HomeViewDataManager {
     }
     
     func loadMore() {
+        
         page += 1
         DataTools.fetchShots(contentTpye: contentType, page: page, success: { [weak self](results) in
             if let results = results {
                 for i in 0..<results.count {
-                    self?.shots.append(HomeCellViewModel.init(model: results[i]))
+                    self?.shots.append(results[i])
+                    self?.displayShots.append(HomeCellViewModel.init(model: results[i]))
                 }
                 self?.delegate?.homeViewDataManagerReloadCollectionView()
             }
