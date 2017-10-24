@@ -10,9 +10,16 @@ import UIKit
 
 class PlayerShotViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var playerShotView: UIImageView!
+    var displayURL: URL?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func updateUI() {
+        
+        playerShotView.sd_setImage(with: displayURL)
+    }
 }

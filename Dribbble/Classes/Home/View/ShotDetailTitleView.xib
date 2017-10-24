@@ -111,7 +111,7 @@
                 <outlet property="likeCount" destination="dCR-wO-nHL" id="KUL-VA-166"/>
                 <outlet property="shotTitle" destination="qbG-E9-udK" id="bBz-UJ-f2C"/>
             </connections>
-            <point key="canvasLocation" x="-397" y="-910"/>
+            <point key="canvasLocation" x="-782" y="-926"/>
         </view>
     </objects>
     <resources>

@@ -102,11 +102,11 @@ fileprivate extension Utilities {
         //let itemHeight = ScreenHeight / 5
         let itemHeight = itemWidth * 3 / 4
         
-        print("ScreenWidth is \(ScreenWidth)")
-        print("ScreenHeight is \(ScreenHeight)")
+        //print("ScreenWidth is \(ScreenWidth)")
+        //print("ScreenHeight is \(ScreenHeight)")
         
-        print("itemWidth is \(itemWidth)")
-        print("itemHeight is \(itemHeight)")
+        //print("itemWidth is \(itemWidth)")
+        //print("itemHeight is \(itemHeight)")
         
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumLineSpacing = itemSpacing

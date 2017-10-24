@@ -33,7 +33,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="338" height="241"/>
-            <point key="canvasLocation" x="-117" y="422"/>
+            <connections>
+                <outlet property="playerShotView" destination="qZf-gT-g2u" id="PLc-At-8fj"/>
+            </connections>
+            <point key="canvasLocation" x="-267" y="425"/>
         </collectionViewCell>
     </objects>
     <resources>

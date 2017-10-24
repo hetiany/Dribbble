@@ -27,7 +27,7 @@ class ShotDetailImageViewModel {
         self.userName = model.user?.name
         self.creatTime = model.created_at
         self.likeCount = model.likes_count
-        self.commentCount = model.likes_count
+        self.commentCount = model.comments_count
         self.description = model.description        
     }
 }

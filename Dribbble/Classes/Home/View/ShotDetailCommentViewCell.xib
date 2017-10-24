@@ -58,7 +58,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="21.5" y="74"/>
+            <connections>
+                <outlet property="commentBody" destination="oIh-Ha-s2q" id="gej-uj-dTh"/>
+                <outlet property="commentCreatedTime" destination="VRP-Nu-b1m" id="Ua8-jk-Nfg"/>
+                <outlet property="commentImage" destination="9Er-tc-asV" id="Lpb-C1-0uT"/>
+                <outlet property="commentPoster" destination="60s-In-7dD" id="iT0-iv-Fb9"/>
+            </connections>
+            <point key="canvasLocation" x="-372" y="50"/>
         </tableViewCell>
     </objects>
     <resources>

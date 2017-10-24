@@ -10,6 +10,7 @@ import Foundation
 
 
 class HomeCellViewModel {
+    var userId: Int?
     var userHeadImageUrl: URL?
     var userName: String?
     var contentImageUrl: URL?
@@ -28,10 +29,11 @@ class HomeCellViewModel {
 //    }
     
     init(model: Shot) {
+        self.userId = model.user?.id
         self.userHeadImageUrl = URL(string: (model.user?.avatar_url ?? ""))
-        self.userName = model.user?.name ?? "nil"
+        self.userName = model.user?.name
         self.contentImageUrl = URL(string: (model.images?.normal ?? ""))
-        self.title = model.title ?? "nil"
+        self.title = model.title
         self.creatTime = model.created_at
         self.likeCount = model.likes_count
         self.commentCount = model.likes_count

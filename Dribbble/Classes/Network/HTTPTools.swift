@@ -50,10 +50,7 @@ class HTTPTools {
         
     }
     
-    
-    
-    
-    
+
     static func post(
         urlStr: String,
         parameters: [String: Any]? = nil,

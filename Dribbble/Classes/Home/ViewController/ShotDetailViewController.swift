@@ -22,10 +22,12 @@ class ShotDetailViewController: SUIViewController {
     var shotDetailImageDescript: ShotDetailImageViewModel?
     var shot: Shot?
     var page: Int = 1
+    var comments: [Comment] = []
 
     init(model: Shot) {
         
         super.init(nibName: nil, bundle: nil)
+        shot = model
         shotDetailImageDescript = ShotDetailImageViewModel(model: model)
     }
     
@@ -51,7 +53,7 @@ extension ShotDetailViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 22
+            return comments.count + 1
         }
     }
     
@@ -86,6 +88,9 @@ extension ShotDetailViewController: UITableViewDataSource {
             }
             else {
                 let shotCommentCell = tableView.dequeueReusableCell(withIdentifier: shotDetailCommentId, for: indexPath) as!ShotDetailCommentViewCell
+                
+                shotCommentCell.displayObject = ShotDetailCommentViewModel(model: comments[indexPath.row - 1])
+                shotCommentCell.updateUI()
                 return shotCommentCell
             }
         }
@@ -133,10 +138,13 @@ fileprivate extension Utilities {
         
         let tableView = UITableView(frame: self.view.frame, style: .plain)
         //tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 2
-        //tableView.sectionHeaderHeight = UITableViewAutomaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 100
+//        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+//        tableView.sectionFooterHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
         //tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         if #available(iOS 11.0, *) {
             //tableView.contentInsetAdjustmentBehavior = .automatic
@@ -171,58 +179,59 @@ fileprivate extension Utilities {
         let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(self.refreshNewComments))
         header?.beginRefreshing()
         shotTableView?.mj_header = header
-        
+
         let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMoreComments))
-        footer?.setTitle("No more shots", for: .noMoreData)
+        //footer?.setTitle("No more shots", for: .noMoreData)
         shotTableView?.mj_footer = footer
+        //footer?.beginRefreshing()
     }
     
     
     @objc func refreshNewComments() {
         
-//        page = 1
-//        DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
-//            if let results = results {
-//                self.shots.removeAll()
-//                self.displayShots.removeAll()
-//                self.shots = results
-//                for i in 0..<results.count {
-//                    self.displayShots.append(HomeCellViewModel.init(model: results[i]))
-//                }
-//                self.shotTableView?.reloadData()
-//            }
-//            self.shotTableView?.mj_header.endRefreshing()
-//            self.shotTableView?.mj_footer.endRefreshing()
-//
-//        }, failure: { (error) in
-//            print(error?.localizedDescription ?? "Unknown Error")
-//            self.shotTableView?.mj_header.endRefreshing()
-//            self.shotTableView?.mj_footer.endRefreshing()
-//        })
+        page = 1
+        guard let shotId = shot?.id else {
+            return
+        }
+        DataTools.fetchComment(page: page, id: shotId, success: { (results) in
+            if let results = results {
+                self.comments = results
+                self.shotTableView?.reloadData()
+            }
+            self.shotTableView?.mj_header.endRefreshing()
+            self.shotTableView?.mj_footer.endRefreshing()
+            print("referesh")
+
+        }, failure: { (error) in
+            print(error?.localizedDescription ?? "Unknown Error")
+            self.shotTableView?.mj_header.endRefreshing()
+            self.shotTableView?.mj_footer.endRefreshing()
+        })
     }
     
     @objc func loadMoreComments() {
         
-//        page += 1
-//        DataTools.fetchShots(contentTpye: contentType, page: page, success: { (results) in
-//            if let results = results {
-//                for i in 0..<results.count {
-//                    self.shots.append(results[i])
-//                    self.displayShots.append(HomeCellViewModel.init(model: results[i]))
-//                }
-//                self.shotTableView?.reloadData()
-//            }
-//            self.shotTableView?.mj_header.endRefreshing()
-//            self.shotTableView?.mj_footer.endRefreshing()
-//
-//        }, failure: { (error) in
-//            self.page -= 1
-//            print(error?.localizedDescription ?? "Unknown Error")
-//            self.shotTableView?.mj_header.endRefreshing()
-//            self.shotTableView?.mj_footer.endRefreshing()
-//        })
-//
-//        //collectionView?.mj_footer.endRefreshingWithNoMoreData()
+        self.page += 1
+        guard let shotId = shot?.id else {
+            return
+        }
+        DataTools.fetchComment(page: page, id: shotId, success: { (results) in
+            if let results = results {
+                self.comments.append(contentsOf: results)
+                self.shotTableView?.mj_footer.endRefreshing()
+                self.shotTableView?.reloadData()
+                //self.page += 1
+            }
+            else {
+                self.shotTableView?.mj_footer.endRefreshingWithNoMoreData()
+            }
+        }, failure: { (error) in
+            //self.page -= 1
+            print(error?.localizedDescription ?? "Unknown Error")
+            //self.shotTableView?.mj_header.endRefreshing()
+            self.shotTableView?.mj_footer.endRefreshing()
+        })
+        //shotTableView?.mj_footer.endRefreshingWithNoMoreData()
     }
 }
 

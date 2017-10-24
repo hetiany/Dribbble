@@ -57,16 +57,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @objc func tapHeader() {
         
-        print("Header")
         delegate?.homeCellDidTapUserHeader(self)
-        //tapUserHeader?(self)
     }
     
     @objc func tapName() {
         
-        print("Name")
         delegate?.homeCellDidTapUserName(self)
-        //tapUserName?(self)
     }
     
     func updateUI() {

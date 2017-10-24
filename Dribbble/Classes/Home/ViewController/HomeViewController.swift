@@ -92,17 +92,20 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+
 //MARK: - HomeCollectionViewCellDelegate
 extension HomeViewController: HomeCollectionViewCellDelegate {
     func homeCellDidTapUserName(_ cell: HomeCollectionViewCell) {
         
         let viewcontroller = PlayerProfileViewController()
+        viewcontroller.userId = cell.displayObject?.userId
         self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
     
     func homeCellDidTapUserHeader(_ cell: HomeCollectionViewCell) {
         
         let viewcontroller = PlayerProfileViewController()
+        viewcontroller.userId = cell.displayObject?.userId
         self.navigationController?.pushViewController(viewcontroller, animated: false)
     }
 }

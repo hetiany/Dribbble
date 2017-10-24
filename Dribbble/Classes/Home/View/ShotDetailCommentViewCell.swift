@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ShotDetailCommentViewCell: UITableViewCell {
 
-
+    
+    @IBOutlet weak var commentImage: UIImageView!
+    @IBOutlet weak var commentPoster: UILabel!
+    @IBOutlet weak var commentBody: UILabel!
+    @IBOutlet weak var commentCreatedTime: UILabel!
+    
+    var displayObject: ShotDetailCommentViewModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +28,12 @@ class ShotDetailCommentViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func updateUI() {
+        commentImage.sd_setImage(with: displayObject?.commentImageURL)
+        commentPoster.text = displayObject?.commentPoster
+        commentBody.text = displayObject?.commentBody
+        commentCreatedTime.text = displayObject?.commentCreatedTime
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 import PureLayout
+import MJRefresh
 
 class PortfolioViewController: SUIViewController {
 
@@ -18,6 +19,7 @@ class PortfolioViewController: SUIViewController {
     var headImage: UIImageView?
     var name: UILabel?
     var registerTime: UILabel?
+    var page: Int = 1
     
     let PortfolioDetail = ["Likes",
                       "Following",
@@ -27,6 +29,7 @@ class PortfolioViewController: SUIViewController {
         super.viewDidLoad()
         prepareUI()
         prepareTableView()
+        prepareRefresher()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -145,7 +148,66 @@ fileprivate extension Utilities {
         //tableView.autoAlignAxis(toSuperviewAxis: .vertical)
         tableView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsetsMake(0, 0, 0, 0), excludingEdge: .top)
         tableView.autoPinEdge(.top, to: .bottom, of: name!, withOffset: 16)
+    }
+    
+    func prepareRefresher() {
         
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(self.refreshNew))
+        header?.beginRefreshing()
+        tableView?.mj_header = header
         
+        let footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(self.loadMore))
+        //footer?.setTitle("No more shots", for: .noMoreData)
+        tableView?.mj_footer = footer
+        //footer?.beginRefreshing()
+    }
+    
+    
+    @objc func refreshNew() {
+        
+        page = 1
+//        guard let userId = userId else {
+//            return
+//        }
+        DataTools.fetchAuthUser(page: page, success: { (results) in
+            if let results = results {
+                //self.comments = results
+                //print(results.username)
+                self.tableView?.reloadData()
+            }
+            self.tableView?.mj_header.endRefreshing()
+            self.tableView?.mj_footer.endRefreshing()
+            print("referesh")
+            
+        }, failure: { (error) in
+            print(error?.localizedDescription ?? "Unknown Error")
+            self.tableView?.mj_header.endRefreshing()
+            self.tableView?.mj_footer.endRefreshing()
+        })
+    }
+    
+    @objc func loadMore() {
+        
+        self.page += 1
+//        guard let userId = userId else {
+//            return
+//        }
+        DataTools.fetchAuthUser(page: page, success: { (results) in
+            if let results = results {
+                //self.comments.append(contentsOf: results)
+                
+                self.tableView?.mj_footer.endRefreshing()
+                self.tableView?.reloadData()
+            }
+            else {
+                self.tableView?.mj_footer.endRefreshingWithNoMoreData()
+            }
+        }, failure: { (error) in
+            //self.page -= 1
+            print(error?.localizedDescription ?? "Unknown Error")
+            //playerCollectionView?.mj_header.endRefreshing()
+            self.tableView?.mj_footer.endRefreshing()
+        })
+        //tableView?.mj_footer.endRefreshingWithNoMoreData()
     }
 }

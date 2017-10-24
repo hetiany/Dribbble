@@ -37,6 +37,7 @@
 		D516DCA31F6B6B530038A926 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DCA21F6B6B530038A926 /* ExploreViewController.swift */; };
 		D516DCA51F6B6BB30038A926 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516DCA41F6B6BB30038A926 /* PortfolioViewController.swift */; };
 		D51ECC711F918B26004AA78C /* ShotDetailViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51ECC701F918B26004AA78C /* ShotDetailViewDataManager.swift */; };
+		D55860671F9EACE200991E51 /* PlayerShotSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55860661F9EACE200991E51 /* PlayerShotSummaryViewModel.swift */; };
 		D5691A041F9436D00074736A /* ShotDetailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5691A031F9436D00074736A /* ShotDetailImageViewModel.swift */; };
 		D5691A061F9436E00074736A /* ShotDetailCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5691A051F9436E00074736A /* ShotDetailCommentViewModel.swift */; };
 		D5691A081F944FDB0074736A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5691A071F944FDB0074736A /* Comment.swift */; };
@@ -104,6 +105,7 @@
 		D516DCA21F6B6B530038A926 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		D516DCA41F6B6BB30038A926 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		D51ECC701F918B26004AA78C /* ShotDetailViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailViewDataManager.swift; sourceTree = "<group>"; };
+		D55860661F9EACE200991E51 /* PlayerShotSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerShotSummaryViewModel.swift; sourceTree = "<group>"; };
 		D5691A031F9436D00074736A /* ShotDetailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailImageViewModel.swift; sourceTree = "<group>"; };
 		D5691A051F9436E00074736A /* ShotDetailCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotDetailCommentViewModel.swift; sourceTree = "<group>"; };
 		D5691A071F944FDB0074736A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -381,10 +383,10 @@
 			children = (
 				D5A3D8D81F8086DA00CDFEC3 /* PortfolioDetailViewCell.swift */,
 				D5A3D8D91F8086DA00CDFEC3 /* PortfolioDetailViewCell.xib */,
-				D5752E641F8871FA0099B716 /* PlayerShotViewCell.swift */,
-				D5752E651F8871FA0099B716 /* PlayerShotViewCell.xib */,
 				D5CFA99C1F8DC1C400ED4257 /* PlayerShotSummaryView.swift */,
 				D5CFA99D1F8DC1C400ED4257 /* PlayerShotSummaryView.xib */,
+				D5752E641F8871FA0099B716 /* PlayerShotViewCell.swift */,
+				D5752E651F8871FA0099B716 /* PlayerShotViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +403,7 @@
 		D516DCA11F6B6AFD0038A926 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D55860661F9EACE200991E51 /* PlayerShotSummaryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -530,13 +533,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dribbble-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E96044677CDA5199E6364E94 /* [CP] Copy Pods Resources */ = {
@@ -560,9 +566,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dribbble/Pods-Dribbble-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -588,6 +609,7 @@
 				D516DC2B1F5FA02C0038A926 /* HomeViewController.swift in Sources */,
 				D51ECC711F918B26004AA78C /* ShotDetailViewDataManager.swift in Sources */,
 				D516DC3F1F60C4500038A926 /* HTTPTools.swift in Sources */,
+				D55860671F9EACE200991E51 /* PlayerShotSummaryViewModel.swift in Sources */,
 				D5691A061F9436E00074736A /* ShotDetailCommentViewModel.swift in Sources */,
 				D50708771F8456B5001AB097 /* ShotDetailImageViewCell.swift in Sources */,
 				D516DC981F6B679A0038A926 /* UIButton+Utilities.swift in Sources */,

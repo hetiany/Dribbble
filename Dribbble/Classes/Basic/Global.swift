@@ -24,7 +24,6 @@ let shotsDebutsEndPoint = "https://api.dribbble.com/v1/shots?list=debuts&"
 let shotsTeamsEndPoint = "https://api.dribbble.com/v1/shots?list=teams&"
 let shotsPlayoffsEndPoint = "https://api.dribbble.com/v1/shots?list=playoffs&"
 
-
 //User End Point
 let userEndPoint = "https://api.dribbble.com/v1/user"
 let usersEndPoint = "https://api.dribbble.com/v1/users"

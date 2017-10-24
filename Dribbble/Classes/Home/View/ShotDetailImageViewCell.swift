@@ -30,7 +30,7 @@ class ShotDetailImageViewCell: UITableViewCell {
     func updateUI() {
         
         let ratio = (CGFloat)(3.0 / 4.0)
-        print("ratio\(ratio)")
+        //print("ratio\(ratio)")
         let cellWidth = UIScreen.main.bounds.width
         let shotHeightValue = ratio * cellWidth
        // print("old shotHeight \(shotHeight.constant)")
